@@ -18,6 +18,7 @@ def add_view(request: WSGIRequest):
     to_do_data = {
         'title': request.POST.get('title'),
         'description': request.POST.get('description'),
+        'text': request.POST.get('text'),
         'status': status,
         'execution_date': request.POST.get('execution_date'),
         'created_at': request.POST.get('created_at')

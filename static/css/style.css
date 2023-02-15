@@ -1,0 +1,33 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial;
+    
+}
+
+.container {
+    margin: 50px auto !important;
+    background: cadetblue;
+    width: 800px;
+    border-radius: 10px;
+    padding-bottom: 15px;
+}
+
+body {
+    background: url(../img/main-pic.png);
+}
+
+div {
+    opacity: 0.9;
+     padding: 1px; 
+  }
+
+.title {
+    text-align: center;
+}
+
+.button-text-color {
+    color: white;
+}
+

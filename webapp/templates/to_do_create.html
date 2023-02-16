@@ -2,7 +2,7 @@
 {% block title %}To do create{% endblock %}
 
 {% block content %}
-    <form action="/to_do/add" method="post">
+    <form action="{% url 'to_do_add' %}" method="post">
         {% csrf_token %}
         <h1 class="title">New task</h1>
         <div class="list-group">

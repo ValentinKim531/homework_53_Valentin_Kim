@@ -1,0 +1,69 @@
+{% extends 'base.html' %}
+{% block title %}To do upadate{% endblock %}
+
+{% block content %}
+{#        <h1 class="title">Task</h1>#}
+{#        <ul class="list-group">#}
+{#            <li class="list-group-item d-flex justify-content-between align-items-start">#}
+{#                <div class="ms-2 me-auto">#}
+{#                <div class="fw-bold">Title: {{ to_do.title }}</div>#}
+{#            </div>#}
+{#            </li>#}
+{#            <li class="list-group-item d-flex justify-content-between align-items-start">#}
+{#                <div class="ms-2 me-auto">#}
+{#                    <div class="fw-bold">Description: {{ to_do.description }}</div>#}
+{#                </div>#}
+{#            </li>#}
+{#            <li class="list-group-item d-flex justify-content-between align-items-start">#}
+{#                <div class="ms-2 me-auto">#}
+{#                    <div class="fw-bold" style="white-space: pre-wrap">Text field: {{ to_do.text }}</div>#}
+{#                </div>#}
+{#            </li>#}
+{#            <li class="list-group-item d-flex justify-content-between align-items-start">#}
+{#                <div class="ms-2 me-auto">#}
+{#                    <div class="fw-bold">Status: {{ to_do.status }}</div>#}
+{#                </div>#}
+{#            </li>#}
+{#            <li class="list-group-item d-flex justify-content-between align-items-start">#}
+{#                <div class="ms-2 me-auto">#}
+{#                    <div class="fw-bold">Planned due date: {{ to_do.execution_date }}</div>#}
+{#                </div>#}
+{#            </li>#}
+{#        </ul>#}
+{#        <form action="{% url 'to_do_delete' to_do.pk%}" method="post">#}
+{#            {% csrf_token %}#}
+{#            <button type="submit" class="btn btn-success">Delete</button>#}
+{#        </form>#}
+
+
+
+        <form action="{% url 'to_do_update' to_do.pk %}" method="post">
+        {% csrf_token %}
+        <h1 class="title">Update task</h1>
+        <div class="list-group">
+            <label for="title">Title</label>
+            <input type="text" name="title" id="title" placeholder="{{ to_do.title }}">
+        </div>
+        <div class="list-group">
+            <label for="description">Description</label>
+            <textarea name="description" id="description" cols="2" rows="1" placeholder="{{ to_do.description }}"></textarea>
+        </div>
+        <div class="list-group">
+            <label for="text">Text field</label>
+            <textarea name="text" id="text" cols="93" rows="5" placeholder="{{ to_do.text }}"></textarea>
+        </div>
+        <div>
+            <p>Current status:<select name="status">
+                    <option value="new">New</option>
+                    <option value="in_progress">In progress</option>
+                    <option value="finished">Finished</option>
+                </select></p>
+        </div>
+        <div>
+            <label for="execution_date">Planned due date:</label>
+            <input type="text" id="execution_date" name="execution_date" placeholder="{{ to_do.execution_date }}">
+        </div>
+            <button type="submit" class="btn btn-success">Update</button>
+    </form>
+
+{% endblock %}

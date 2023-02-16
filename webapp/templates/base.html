@@ -14,12 +14,10 @@
 <body>
 <nav class="navbar">
     <div class="container">
-        <ul class="menu">
-            <li>
-                <a href="{% url 'index' %}">Home</a>
+        <div class="menu">
+                <button type="button" class="btn btn-primary button"><a href="{% url 'index' %}" class="button-text-color">Home</a></button>
                 {% block menu %}{% endblock %}
-            </li>
-        </ul>
+        </div>
     </div>
 </nav>
 <div class="container">
@@ -31,3 +29,5 @@
     crossorigin="anonymous"></script>
 </body>
 </html>
+
+

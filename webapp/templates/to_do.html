@@ -1,11 +1,9 @@
 {% extends 'base.html' %}
 {% block title %}Article{% endblock %}
 {% block menu %}
-    <a href="{% url 'to_do_add' %}">Add Article</a>
+    <button type="button" class="btn btn-primary button"><a href="{% url 'to_do_add' %}" class="button-text-color">Add Task</a></button>
 {% endblock %}
 {% block content %}
-    <div class="container">
-        <button type="button" class="btn btn-primary button"><a href="/" class="button-text-color">Home</a></button>
         <h1 class="title">Task</h1>
         <ul class="list-group">
             <li class="list-group-item d-flex justify-content-between align-items-start">
@@ -20,7 +18,7 @@
             </li>
             <li class="list-group-item d-flex justify-content-between align-items-start">
                 <div class="ms-2 me-auto">
-                    <div class="fw-bold">Text field: {{ to_do.text }}</div>
+                    <div class="fw-bold" style="white-space: pre-wrap">Text field: {{ to_do.text }}</div>
                 </div>
             </li>
             <li class="list-group-item d-flex justify-content-between align-items-start">
@@ -38,5 +36,4 @@
             {% csrf_token %}
             <button type="submit" class="btn btn-success">Delete</button>
         </form>
-    </div>
 {% endblock %}

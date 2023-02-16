@@ -6,6 +6,7 @@
     
 }
 
+
 .container {
     margin: 50px auto !important;
     background: cadetblue;
@@ -18,6 +19,12 @@ body {
     background: url(../img/main-pic.png);
 }
 
+.bg-primary {
+    --bs-bg-opacity: 1;
+    background-color: rgb(24, 122, 122)!important;
+}
+
+
 div {
     opacity: 0.9;
      padding: 1px; 
@@ -29,5 +36,15 @@ div {
 
 .button-text-color {
     color: white;
+}
+
+.btn-primary {
+    background-color:rgb(24, 122, 122);
+    border-color:transparent;
+    padding: 1px 10px;
+}
+
+.code {
+  white-space: pre;
 }
 
